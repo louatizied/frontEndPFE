@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        
+        <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+    <form [formGroup]="loginForm">
+        <div class="form-floating">
+          <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+      <div *ngIf="loginForm.get('email')!.errors">
+        <div class="row">
+            <div class="alert alert-danger" role="alert" *ngIf="!loginForm.pristine && loginForm.get('email')!.errors!['email']">
+                Email field is not valid !!!
+              </div>
+        </div>
+        <div class="row">
+            <div class="alert alert-danger" role="alert" *ngIf="!loginForm.pristine && loginForm.get('email')!.errors!['required']">
+                Email is required !!!
+              </div>
+        </div>
+      </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+          
+        </div>
+        <div class="row">
+            <div class="alert alert-danger" role="alert" *ngIf="!loginForm.pristine && loginForm.get('password')!.errors">
+                Password is not valid !!!
+              </div>
+        </div>
+       
+        <div class="row">
+            <div class="alert alert-danger" role="alert" *ngIf="loginForm.invalid">
+                A error occured during form validation !!!
+              </div>
+        </div>
+        <div class="row">
+            <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid" (click)="onSubmit()">Submit</button>
+        </div>
+        <div class="row">
+            <p class="text-center text-muted">© 2021–2022</p>
+        </div>
+        
+    </form>
+    </div>
+</div>
+    

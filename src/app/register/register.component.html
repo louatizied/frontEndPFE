@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        
+        <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+    <form [formGroup]="registerForm">
+        <div class="form-floating">
+            <input type="name" class="form-control" formControlName="name" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Nom_prénom</label>
+            <div class="row">
+                <div class="alert alert-danger" role="alert" *ngIf="!registerForm.pristine && registerForm.get('name')!.errors">
+                    Nom_prénom is not valid !!!
+                  </div>
+            </div>  
+        </div>
+          
+        <div class="form-floating">
+          <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+          <div *ngIf="registerForm.get('email')!.errors">
+            
+                <div class="alert alert-danger" role="alert" *ngIf="!registerForm.pristine && registerForm.get('email')!.errors!['email']">
+                    Email field is not valid !!!
+                  </div>
+           
+            
+                <div class="alert alert-danger" role="alert" *ngIf="!registerForm.pristine && registerForm.get('email')!.errors!['required']">
+                    Email is required !!!
+                  </div>
+           
+          </div>
+        </div>
+        
+        <div class="form-floating">
+            <input type="cin" class="form-control" formControlName="cin" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">CIN</label>
+            <div class="row">
+                <div class="alert alert-danger" role="alert" *ngIf="!registerForm.pristine && registerForm.get('cin')!.errors">
+                    CIN is not valid !!!
+                  </div>
+            </div>
+        </div>
+          
+        <div class="form-floating">
+            <input type="num_tel" class="form-control" formControlName="num_tel" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Numéro de Télephone</label>
+            <div class="row">
+                <div class="alert alert-danger" role="alert" *ngIf="!registerForm.pristine && registerForm.get('num_tel')!.errors">
+                    Num Tel is not valid !!!
+                  </div>
+            </div>  
+        </div> 
+        <div class="form-floating">
+          <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+          <div class="row">
+            <div class="alert alert-danger" role="alert" *ngIf="!registerForm.pristine && registerForm.get('password')!.errors">
+                Password is not valid !!!
+              </div>
+        </div> 
+        </div>
+   
+        <div class="row">
+            <div class="alert alert-danger" role="alert" *ngIf="!registerForm.pristine && !registerForm.valid">
+                A error occured during form validation !!!
+              </div>
+        </div>
+        <div class="row">
+            <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="onSubmit()" >Submit</button>
+        </div>
+        <div class="row">
+            <p class="text-center text-muted">© 2021–2022</p>
+        </div>
+        
+    </form>
+    </div>
+</div>
+    
