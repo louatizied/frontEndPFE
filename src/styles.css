@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Redressed&family=Merriweather:wght@300;400;700&display=swap');
+
+.cc-navbar {
+    background-color: rgba(0, 0, 0, 0.55);
+    font-family: 'Merriweather', serif;
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.54);
+}
+
+.cc-navbar .nav-link {
+    border-bottom: 1px solid transparent;
+    transition: padding-bottom 0.4s ease-in-out, border-color 0.3s ease;
+}
+
+.cc-navbar .nav-link:hover {
+    padding-bottom: 20px;
+    border-bottom-color: var(--bs-teal);
+}
+
+.redressed{
+    font-family: 'Redressed', cursive;
+}
+.merriweather{
+    font-family: 'Merriweather',serif;
+}
+.banner{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), url('/src/assets/img/img1.jpg'));
+}
+
+.btn-order {
+    color: var(--bs-teal);
+    border-color: var(--bs-teal);
+    transition: 0.5s;
+}
+
+.btn-order:hover,
+.btn-order:active {
+    color: #fff;
+    background-color: var(--bs-teal);
+}

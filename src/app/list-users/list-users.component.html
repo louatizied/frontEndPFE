@@ -1,0 +1,55 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Cin</th>
+        <th scope="col">Num_tel</th>
+        <th scope="col">Role</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let user of users">
+        <th scope="row">{{user.userId}}</th>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.cin}}</td>
+        <td>{{user.num_tel}}</td>
+        <td>
+          <samp *ngFor="let role of user.roles">
+            {{role.roleName}}
+          </samp> 
+        </td>
+        <td>
+          <button class="btn btn-primary mx-2" (click)="editUser(user.userId)">Edit</button>
+          
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" (click)="clickOnDelete(user.userId)" data-bs-target="#deleteModal">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Do tou want to delete this user ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Do tou want to delete this user ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete(userIdToDelete)" >Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

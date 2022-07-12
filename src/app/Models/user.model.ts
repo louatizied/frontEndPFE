@@ -1,8 +1,11 @@
-export class User{
-      name!: string
-      email!: string
-      cin!: number
-      num_tel!: number
-      password!: string
-      role!: string
+import { Role } from './role.model';
+export class User {
+    
+    userId: number = 0;
+    username: string = "";
+    cin: number = 0;
+    num_tel: number = 0;
+    email: string = "";
+    password: string = "";
+    roles: Role[] = [];
 }
